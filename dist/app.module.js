@@ -21,13 +21,14 @@ var forms_1 = require("@angular/forms");
 var about_component_1 = require('./about.component');
 var app_component_1 = require('./app.component');
 var auth_component_1 = require("./auth.component");
+var host_component_1 = require("./host.component");
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
             imports: [platform_browser_1.BrowserModule, forms_1.FormsModule],
-            declarations: [main_container_component_1.MainContainer, app_component_1.AppComponent, about_component_1.AboutComponent, auth_component_1.AuthComponent],
+            declarations: [main_container_component_1.MainContainer, app_component_1.AppComponent, about_component_1.AboutComponent, auth_component_1.AuthComponent, host_component_1.HostComponent],
             bootstrap: [main_container_component_1.MainContainer],
             providers: [line_item_service_1.LineItemService, api_service_1.ApiService, auth_service_1.AuthService].concat(http_1.HTTP_PROVIDERS, [router_1.provideRouter(routes_1.routes)])
         }), 

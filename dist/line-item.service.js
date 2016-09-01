@@ -17,8 +17,16 @@ var LineItemService = (function () {
         console.log("hey constructor is running");
         this.getAllItems().subscribe();
     }
-    LineItemService.prototype.getAllItems = function (username) {
+    LineItemService.prototype.getAllItems = function () {
         return this.apiService.get("/all")
+            .do(function (res) {
+            this.items = res;
+        }.bind(this));
+    };
+    LineItemService.prototype.getHostItems = function (_id) {
+        return this.apiService.post("/one", JSON.stringify({
+            _id: _id
+        }))
             .do(function (res) {
             this.items = res;
         }.bind(this));

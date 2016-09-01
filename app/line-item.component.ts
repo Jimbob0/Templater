@@ -313,7 +313,16 @@ import { Component, Input, Output, EventEmitter } from "@angular/core";
                 </div>
             </div>
         </footer>
-        <button class="btn btn-success" (click)="postNewItem()">Host</button>
+        <div>To view your site head to localhost:3000/host/
+            <button class="btn">
+                <input
+                        class="form-control"
+                        type="text"
+                        placeholder="Trademark"
+                        [ngModel]="input._id"
+                />
+            </button>
+        </div>
         <button class="btn btn-danger" (click)="onDeleteClick()">Delete</button>
     </div>
     `

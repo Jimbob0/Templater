@@ -10,8 +10,17 @@ export class LineItemService {
         this.getAllItems().subscribe();
     }
 
-    getAllItems(username) {
+    getAllItems() {
         return this.apiService.get("/all")
+            .do(function(res) {
+                this.items = res;
+            }.bind(this));
+    }
+
+    getHostItems(_id) {
+        return this.apiService.post("/one", JSON.stringify({
+            _id: _id
+        }))
             .do(function(res) {
                 this.items = res;
             }.bind(this));

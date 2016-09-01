@@ -6,6 +6,7 @@ import { AboutComponent } from './about.component';
 
 import { AuthComponent } from "./auth.component";
 import { AuthService } from "./auth.service";
+import { HostComponent } from "./host.component";
 
 export const routes: RouterConfig = [
     {
@@ -20,6 +21,10 @@ export const routes: RouterConfig = [
     {
         path: 'auth',
         component: AuthComponent
+    },
+    {
+        path: 'host/:id',
+        component: HostComponent
     }
 ];
 

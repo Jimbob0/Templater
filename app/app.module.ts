@@ -11,10 +11,11 @@ import { FormsModule } from "@angular/forms";
 import { AboutComponent } from './about.component';
 import { AppComponent } from './app.component';
 import { AuthComponent } from "./auth.component";
+import { HostComponent } from "./host.component";
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule ],
-  declarations: [ MainContainer, AppComponent, AboutComponent, AuthComponent ],
+  declarations: [ MainContainer, AppComponent, AboutComponent, AuthComponent, HostComponent ],
   bootstrap:    [ MainContainer ],
   providers:    [ LineItemService, ApiService, AuthService, ...HTTP_PROVIDERS, provideRouter(routes) ]
 })
