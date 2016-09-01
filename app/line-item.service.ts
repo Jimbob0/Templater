@@ -10,7 +10,7 @@ export class LineItemService {
         this.getAllItems().subscribe();
     }
 
-    getAllItems() {
+    getAllItems(username) {
         return this.apiService.get("/all")
             .do(function(res) {
                 this.items = res;
@@ -22,7 +22,32 @@ export class LineItemService {
         return this.apiService.post("/create", JSON.stringify({
             item : {
                 contents: "",
-                title: ""
+                title: "",
+                b1title: "",
+                b1contents: "",
+                b2title: "",
+                b2contents: "",
+                b3title: "",
+                b3contents: "",
+                ptitle: "",
+                p1Source: "",
+                p2Source: "",
+                p3Source: "",
+                p4Source: "",
+                p5Source: "",
+                p6Source: "",
+                p1Link: "",
+                p2Link: "",
+                p3Link: "",
+                p4Link: "",
+                p5Link: "",
+                p6Link: "",
+                ftitle: "",
+                fpSource: "",
+                CTAcontents: "",
+                BBcontents: "",
+                BBLink: "",
+                TMcontents: ""
             }
         })).do(function(res) {
             console.log("called callback for creating item");
@@ -63,5 +88,4 @@ export class LineItemService {
             }
         }
     }
-
 }

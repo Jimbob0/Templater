@@ -15,7 +15,7 @@ export const routes: RouterConfig = [
     },
     {
         path: 'about',
-        component: AboutComponent
+        component: AboutComponent,
     },
     {
         path: 'auth',

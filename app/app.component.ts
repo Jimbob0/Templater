@@ -15,7 +15,6 @@ import { LineItemService } from './line-item.service';
         (onDelete)="deleteItem(item._id)"
       ></line-item>
       <button class="btn btn-success" (click)="createNewItem()">New Page</button>
-      <button class="btn btn-success" (click)="postNewItem()">Post</button>
     </div>
   `,
   styles: [`

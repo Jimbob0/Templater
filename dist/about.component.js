@@ -15,7 +15,7 @@ var AboutComponent = (function () {
     AboutComponent = __decorate([
         core_1.Component({
             selector: 'about',
-            template: "\n        <div>About Me</div>\n    "
+            template: "\n        <div>\n            <p>\n                This service allows you to create your own webpage by filling the appropriate input fields with content, image links, or website links. The data is stored and you can update it whenever you log in. \n                <br>\n                <br>\n                To start a new project hit the new page button at the bottom of the home page. \n                <br>\n                <br>\n                There are two buttons at the bottom of every template: \n                <br> \n                <br>\n                Host creates you webpage using the data you have inputed. The service will send you to a url on the with the data you inputed displayed. This url is the address for your new webpage. \n                <br> \n                <br>\n                Delete removes that template and all inputed data from the server and the URL for that page will be removed.\n                <br>\n                <br>\n                This service was created by James Neal as the final project for the full-time full-stack web development course at CodeCraft.\n            </p>\n        </div>\n    "
         }), 
         __metadata('design:paramtypes', [])
     ], AboutComponent);

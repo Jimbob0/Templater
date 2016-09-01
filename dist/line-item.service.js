@@ -17,7 +17,7 @@ var LineItemService = (function () {
         console.log("hey constructor is running");
         this.getAllItems().subscribe();
     }
-    LineItemService.prototype.getAllItems = function () {
+    LineItemService.prototype.getAllItems = function (username) {
         return this.apiService.get("/all")
             .do(function (res) {
             this.items = res;
@@ -27,36 +27,58 @@ var LineItemService = (function () {
         console.log("called create new item");
         return this.apiService.post("/create", JSON.stringify({
             item: {
-                year: 0,
-                month: 0,
-                week: 0,
-                day: 0,
-                description: ""
+                contents: "",
+                title: "",
+                b1title: "",
+                b1contents: "",
+                b2title: "",
+                b2contents: "",
+                b3title: "",
+                b3contents: "",
+                ptitle: "",
+                p1Source: "",
+                p2Source: "",
+                p3Source: "",
+                p4Source: "",
+                p5Source: "",
+                p6Source: "",
+                p1Link: "",
+                p2Link: "",
+                p3Link: "",
+                p4Link: "",
+                p5Link: "",
+                p6Link: "",
+                ftitle: "",
+                fpSource: "",
+                CTAcontents: "",
+                BBcontents: "",
+                BBLink: "",
+                TMcontents: ""
             }
         })).do(function (res) {
             console.log("called callback for creating item");
             this.items.push(res);
         }.bind(this));
     };
-    LineItemService.prototype.deleteItem = function (id) {
+    LineItemService.prototype.deleteItem = function (_id) {
         return this.apiService.post("/delete", JSON.stringify({
-            id: id
+            _id: _id
         })).do(function (res) {
             this.items = res;
         }.bind(this));
     };
-    LineItemService.prototype.updateItem = function (id, newValue) {
+    LineItemService.prototype.updateItem = function (_id, newValue) {
         return this.apiService.post("/update", JSON.stringify({
-            id: id,
+            _id: _id,
             item: newValue
         })).do(function (res) {
-            this.overwrite(this.findItemById(id), res);
+            this.overwrite(this.findItemBy_id(_id), res);
         }.bind(this));
     };
-    LineItemService.prototype.findItemById = function (id) {
+    LineItemService.prototype.findItemById = function (_id) {
         for (var _i = 0, _a = this.items; _i < _a.length; _i++) {
             var item = _a[_i];
-            if (item.id === id) {
+            if (item._id === _id) {
                 return item;
             }
         }

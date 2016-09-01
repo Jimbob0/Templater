@@ -24,19 +24,11 @@ var AppComponent = (function () {
     AppComponent.prototype.updateItem = function (id, newValue) {
         this.lineItemService.updateItem(id, newValue).subscribe();
     };
-    AppComponent.prototype.getTotal = function (time) {
-        var sum = 0;
-        for (var _i = 0, _a = this.lineItemService.items; _i < _a.length; _i++) {
-            var i = _a[_i];
-            sum += i[time];
-        }
-        return sum.toFixed(2);
-    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
             directives: [line_item_component_1.LineItemComponent],
-            template: "\n    <div class=\"container\">\n      <h1>Expenses</h1>\n      <div class=\"row\">\n        <div class=\"col-xs-2 title\">Year</div>\n        <div class=\"col-xs-2 title\">Month</div>\n        <div class=\"col-xs-2 title\">Week</div>\n        <div class=\"col-xs-2 title\">Day</div>\n      </div>\n      <line-item\n        *ngFor=\"let monies of lineItemService.items\"\n        [monies]=\"monies\"\n        (onUpdate)=\"updateItem(monies._id, $event)\"\n        (onDelete)=\"deleteItem(monies._id)\"\n      ></line-item>\n      <div class=\"row\">\n        <div class=\"col-xs-2\">\n          <div class=\"total\">{{ getTotal('year') }}</div>\n        </div>\n        <div class=\"col-xs-2\">\n          <div class=\"total\">{{ getTotal('month') }}</div>\n        </div>\n        <div class=\"col-xs-2\">\n          <div class=\"total\">{{ getTotal('week') }}</div>\n        </div>\n        <div class=\"col-xs-2\">\n          <div class=\"total\">{{ getTotal('day') }}</div>\n        </div>\n      </div>\n      <button class=\"btn btn-success\" (click)=\"createNewItem()\">+</button>\n    </div>\n  ",
+            template: "\n    <div class=\"container\">\n      <h1>Page Creation</h1>\n      <line-item\n        *ngFor=\"let item of lineItemService.items\"\n        [input]=\"item\"\n        (onUpdate)=\"updateItem(item._id, $event)\"\n        (onDelete)=\"deleteItem(item._id)\"\n      ></line-item>\n      <button class=\"btn btn-success\" (click)=\"createNewItem()\">New Page</button>\n    </div>\n  ",
             styles: ["\n    .total {\n      padding: 20px;\n    }\n    .title {\n      text-align: center;\n      font-weight: bold;\n    }\n  "]
         }), 
         __metadata('design:paramtypes', [line_item_service_1.LineItemService])
