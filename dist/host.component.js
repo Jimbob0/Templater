@@ -22,7 +22,7 @@ var HostComponent = (function () {
             console.log(id);
             _this.service.getHostItems(id).subscribe();
         });
-        console.log();
+        console.log(service);
     }
     HostComponent = __decorate([
         core_1.Component({

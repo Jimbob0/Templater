@@ -317,7 +317,6 @@ import { HostService } from './host.service';
     `
 })
 export class HostComponent {
-
     private sub: Subscription;
     constructor(
         private route: ActivatedRoute,
@@ -329,6 +328,6 @@ export class HostComponent {
                console.log(id);
                this.service.getHostItems(id).subscribe();
             });
-            console.log();
+        console.log(service);
     }
 }

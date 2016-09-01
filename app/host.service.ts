@@ -11,7 +11,7 @@ export class HostService {
     }
 
     getHostItems(_id) {
-        console.log(_id"service");
+        console.log(_id, "service");
         return this.apiService.post("/one", JSON.stringify({
             _id: _id
         }))
