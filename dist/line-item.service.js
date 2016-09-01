@@ -23,14 +23,6 @@ var LineItemService = (function () {
             this.items = res;
         }.bind(this));
     };
-    LineItemService.prototype.getHostItems = function (_id) {
-        return this.apiService.post("/one", JSON.stringify({
-            _id: _id
-        }))
-            .do(function (res) {
-            this.items = res;
-        }.bind(this));
-    };
     LineItemService.prototype.createNewItem = function () {
         console.log("called create new item");
         return this.apiService.post("/create", JSON.stringify({

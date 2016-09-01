@@ -17,15 +17,6 @@ export class LineItemService {
             }.bind(this));
     }
 
-    getHostItems(_id) {
-        return this.apiService.post("/one", JSON.stringify({
-            _id: _id
-        }))
-            .do(function(res) {
-                this.items = res;
-            }.bind(this));
-    }
-
     createNewItem() {
         console.log("called create new item");
         return this.apiService.post("/create", JSON.stringify({

@@ -12,11 +12,12 @@ import { AboutComponent } from './about.component';
 import { AppComponent } from './app.component';
 import { AuthComponent } from "./auth.component";
 import { HostComponent } from "./host.component";
+import { HostService } from './host.service';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule ],
   declarations: [ MainContainer, AppComponent, AboutComponent, AuthComponent, HostComponent ],
   bootstrap:    [ MainContainer ],
-  providers:    [ LineItemService, ApiService, AuthService, ...HTTP_PROVIDERS, provideRouter(routes) ]
+  providers:    [ LineItemService, ApiService, AuthService, ...HTTP_PROVIDERS, HostService, provideRouter(routes) ]
 })
 export class AppModule { }
